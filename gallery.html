@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="gallery.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <title>Image Gallery with Search Box</title>
+</head>
+<body>
+    <div class="container">
+        <div class="search-box">
+            <i class="bx bx-search"></i>
+            <input type="text" placeholder="Search an image">
+        </div>
+        <div class="images">
+            <div class="image-box" data-name="spiderman">
+                <img src="C:\Users\saada\Downloads\spiderman.jpg" alt="Spiderman">
+                <h6>Spiderman</h6>
+            </div>
+            <div class="image-box" data-name="joker">
+                <img src="C:\Users\saada\Downloads\joker.jpg" alt="Joker">
+                <h6>Joker</h6>
+            </div>
+            <div class="image-box" data-name="ironman">
+                <img src="C:\Users\saada\Downloads\ironman.jpg" alt="Ironman">
+                <h6>Ironman</h6>
+            </div>
+            <div class="image-box" data-name="passenger">
+                <img src="C:\Users\saada\Downloads\passenger.jpg" alt="Passenger">
+                <h6>Passenger</h6>
+            </div>
+            <div class="image-box" data-name="space">
+                <img src="C:\Users\saada\Downloads\space.jpg" alt="The Space">
+                <h6>The Space</h6>
+            </div>
+            <div class="image-box" data-name="spiderman-2">
+                <img src="C:\Users\saada\Downloads\spiderman 2.jpg" alt="Spiderman 2">
+                <h6>Spiderman 2</h6>
+            </div>
+            <div class="image-box" data-name="universe">
+                <img src="C:\Users\saada\Downloads\universe.jpg" alt="The Universe">
+                <h6>The Universe</h6>
+            </div>
+            <div class="image-box" data-name="spiderman-3">
+                <img src="C:\Users\saada\Downloads\spiderman 3.jpg" alt="Spiderman 3">
+                <h6>Spiderman 3</h6>
+            </div>
+            <div class="image-box" data-name="holiday">
+                <img src="C:\Users\saada\Downloads\holiday.jpg" alt="Holiday">
+                <h6>Holiday</h6>
+            </div>
+            <div class="image-box" data-name="ironman-2">
+                <img src="C:\Users\saada\Downloads\ironman 2.jpg" alt="Ironman 2">
+                <h6>Ironman 2</h6>
+            </div>
+        </div>
+    </div>
+    <script>
+        const search = document.querySelector(".search-box input");
+        const images = document.querySelectorAll(".image-box");
+
+        search.addEventListener("keyup", e => {
+            let searchValue = search.value.toLowerCase();
+            images.forEach(image => {
+                if (searchValue === "" || image.dataset.name.includes(searchValue)) {
+                    image.style.display = "block";
+                } else {
+                    image.style.display = "none";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
